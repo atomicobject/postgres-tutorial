@@ -1,0 +1,46 @@
+{
+    "money": {
+        "creatingAndUsingCashFlowProjections": 2,
+        "creatingAndUnderstandingABalanceSheet": 2,
+        "creatingAndUnderstandingAProfitAndLoss": 2,
+        "calculatingBreakEvenAndProfitNeededToReachGoals": 2,
+        "understandingAndStayingCurrentOnAllTaxObligations": 2
+    },
+    "marketing": {
+        "definingAndReachingTargetMarket": 3,
+        "creatingAndManagingWebsiteForMyBusiness": 3,
+        "measuringTheResultsOfMyMarketingEfforts": 2,
+        "aligningMarketingPlanToSupportRevenueAndProfitGoals": 3,
+        "communicatingProductServiceFeaturesAndBenefitsEffectively": 3,
+        "utilizingSocialMediaAndLocalListingsReviewSitesToPromoteMyBusiness": 2
+    },
+    "management": {
+        "trainingEmployees": 3,
+        "knowingWhenAndWhoToHire": 3,
+        "providingCompetitiveJobs": 3,
+        "utilizingTimeManagementStrategies": 4,
+        "retainingEmployeesAndReducingTurnover": 3,
+        "evaluatingAndImplementingSystemsThatEnhanceOperations": 3
+    },
+    "systemsUsed": {
+        "payroll": [
+            "other"
+        ],
+        "inventory": [
+            "none"
+        ],
+        "websitePlatforms": [
+            "squarespace"
+        ],
+        "accountingSystems": [],
+        "marketingChannels": [],
+        "creditCardPointofSaleSystems": [
+            "square"
+        ],
+        "otherIndustrySpecificSystems": ""
+    },
+    "companyGoals": {
+        "oneYear": "Stabilize and establish local support",
+        "threeYear": "Expand on guest experiences and animal care capacities"
+    }
+}
