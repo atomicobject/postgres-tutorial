@@ -27,7 +27,7 @@ async function seed() {
     console.log("Created assessments table");
 
     // Load and insert data
-    const dataPath = join(__dirname, "../../research/superhero_mission_readiness_wrapped_30.json");
+    const dataPath = join(__dirname, "./assessments_seed_data.json");
     const rawData = readFileSync(dataPath, "utf-8");
     const assessments = JSON.parse(rawData);
 
