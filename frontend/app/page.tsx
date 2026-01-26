@@ -1,25 +1,28 @@
-export default async function Home() {
-  const categoryStats = [
+async function getBestWorstQuestions() {
+  // TODO: Replace with Postgres query
+  const bestWorstQuestions = [
     {
-      category: "missionPlanning",
+      category: "Mission Planning",
       best_question: "<<UNKNOWN>>",
       worst_question: "<<UNKNOWN>>",
     },
     {
-      category: "teamDynamics",
+      category: "Team Dynamics",
       best_question: "<<UNKNOWN>>",
       worst_question: "<<UNKNOWN>>",
     },
     {
-      category: "techAndTactics",
+      category: "Tech and Tactics",
       best_question: "<<UNKNOWN>>",
       worst_question: "<<UNKNOWN>>",
     },
   ];
 
-  const formatCategory = (category: string) => {
-    return category.replace(/([A-Z])/g, " $1").replace(/^./, (s) => s.toUpperCase());
-  };
+  return bestWorstQuestions;
+}
+
+export default async function Home() {
+  const categoryStats = await getBestWorstQuestions();
 
   return (
     <main style={{ padding: "2rem" }}>
@@ -38,7 +41,7 @@ export default async function Home() {
             marginTop: "1rem",
           }}
         >
-          <h2>{formatCategory(stat.category)}</h2>
+          <h2>{stat.category}</h2>
           <div style={{ display: "flex", gap: "2rem" }}>
             <div>
               <h3>Best Performance</h3>
