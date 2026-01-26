@@ -1,3 +1,5 @@
+import { query } from "@/lib/db";
+
 async function getBestWorstQuestions() {
   // TODO: Replace with Postgres query
   const bestWorstQuestions = [
