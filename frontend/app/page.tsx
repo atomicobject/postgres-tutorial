@@ -1,4 +1,10 @@
 import { query } from "@/lib/db";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 async function getBestWorstQuestions() {
   // TODO: Replace with Postgres query
@@ -27,38 +33,50 @@ export default async function Home() {
   const categoryStats = await getBestWorstQuestions();
 
   return (
-    <main style={{ padding: "2rem" }}>
-      <h1>Postgres Workshop</h1>
-      <p>Next.js + PostgreSQL running in Docker</p>
+    <main className="min-h-screen bg-background p-8">
+      <div className="mx-auto max-w-4xl">
+        <h1 className="text-4xl font-bold tracking-tight mb-2">
+          Postgres Workshop
+        </h1>
+        <p className="text-muted-foreground mb-8">
+          Superhero Mission Readiness Assessment Results
+        </p>
 
       {/* TODO: Top Performing super hero */}
 
+        <div className="grid gap-6">
       {categoryStats.map((stat) => (
-        <section
-          key={stat.category}
-          style={{
-            border: "1px solid #ccc",
-            borderRadius: "8px",
-            padding: "1rem",
-            marginTop: "1rem",
-          }}
-        >
-          <h2>{stat.category}</h2>
-          <div style={{ display: "flex", gap: "2rem" }}>
+            <Card key={stat.category}>
+              <CardHeader>
+                <CardTitle>{stat.category}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 gap-6">
             <div>
-              <h3>Best Performance</h3>
-              <p>{stat.best_question}</p>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">
+                      Best Performance
+                    </h3>
+                    <p className="text-lg font-semibold text-green-600">
+                      {stat.best_question}
+                    </p>
             </div>
             <div>
-              <h3>Worst</h3>
-              <p>{stat.worst_question}</p>
+                    <h3 className="text-sm font-medium text-muted-foreground mb-1">
+                      Needs Improvement
+                    </h3>
+                    <p className="text-lg font-semibold text-red-600">
+                      {stat.worst_question}
+                    </p>
             </div>
           </div>
-        </section>
+              </CardContent>
+            </Card>
       ))}
+        </div>
 
       {/* TODO: Top Equipment for each type */}
       {/* TODO: Search box which list all goals that mention the word you type eg "teamwork" */}
+      </div>
     </main>
   );
 }
