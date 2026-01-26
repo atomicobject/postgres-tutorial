@@ -25,3 +25,7 @@ docker compose up --build
 
 - **App**: http://localhost:3000
 - **pgweb** (database UI): http://localhost:8081
+
+## Workshop
+
+[Get started with the workshop steps](docs/postgres-workshop-steps.md)
