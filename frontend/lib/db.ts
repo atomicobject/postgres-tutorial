@@ -1,3 +1,4 @@
+import "server-only";
 import { Pool } from "pg";
 
 const pool = new Pool({
@@ -5,14 +6,9 @@ const pool = new Pool({
 });
 
 // Simple query helper for raw SQL
-export async function query<T = unknown>(text: string, params?: unknown[]): Promise<T[]> {
-  const result = await pool.query(text, params);
+export async function query<T = unknown>(text: string): Promise<T[]> {
+  const result = await pool.query(text);
   return result.rows as T[];
-}
-
-// For when you need the full result (row count, etc.)
-export async function queryRaw(text: string, params?: unknown[]) {
-  return pool.query(text, params);
 }
 
 export default pool;
