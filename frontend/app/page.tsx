@@ -56,7 +56,7 @@ export default async function Home() {
                     <h3 className="text-sm font-medium text-muted-foreground mb-1">
                       Best Performance
                     </h3>
-                    <p className="text-lg font-semibold text-green-600">
+                    <p className="text-lg font-semibold text-primary">
                       {stat.best_question}
                     </p>
             </div>
@@ -64,7 +64,7 @@ export default async function Home() {
                     <h3 className="text-sm font-medium text-muted-foreground mb-1">
                       Needs Improvement
                     </h3>
-                    <p className="text-lg font-semibold text-red-600">
+                    <p className="text-lg font-semibold text-destructive">
                       {stat.worst_question}
                     </p>
             </div>
