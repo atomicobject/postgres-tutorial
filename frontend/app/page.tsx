@@ -7,8 +7,7 @@ import {
 } from "@/components/ui/card";
 
 async function getBestWorstQuestions() {
-  // TODO: Replace with Postgres query
-  const bestWorstQuestions = [
+  let bestWorstQuestions = [
     {
       category: "Mission Planning",
       best_question: "<<UNKNOWN>>",
@@ -26,6 +25,14 @@ async function getBestWorstQuestions() {
     },
   ];
 
+  // bestWorstQuestions = await query<{
+  //   category: string;
+  //   best_question: string;
+  //   worst_question: string;
+  // }>(`
+  // // TODO: Replace with Postgres query
+  // `);
+
   return bestWorstQuestions;
 }
 
@@ -36,46 +43,46 @@ export default async function Home() {
     <main className="min-h-screen bg-background p-8">
       <div className="mx-auto max-w-4xl">
         <h1 className="text-4xl font-bold tracking-tight mb-2">
-          Postgres Workshop
+          Superhero Assessment Results
         </h1>
         <p className="text-muted-foreground mb-8">
           Superhero Mission Readiness Assessment Results
         </p>
 
-      {/* TODO: Top Performing super hero */}
+        {/* TODO: Top Performing super hero */}
 
         <div className="grid gap-6">
-      {categoryStats.map((stat) => (
+          {categoryStats.map((stat) => (
             <Card key={stat.category}>
               <CardHeader>
                 <CardTitle>{stat.category}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 gap-6">
-            <div>
+                  <div>
                     <h3 className="text-sm font-medium text-muted-foreground mb-1">
                       Best Performance
                     </h3>
                     <p className="text-lg font-semibold text-primary">
                       {stat.best_question}
                     </p>
-            </div>
-            <div>
+                  </div>
+                  <div>
                     <h3 className="text-sm font-medium text-muted-foreground mb-1">
                       Needs Improvement
                     </h3>
                     <p className="text-lg font-semibold text-destructive">
                       {stat.worst_question}
                     </p>
-            </div>
-          </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
-      ))}
+          ))}
         </div>
 
-      {/* TODO: Top Equipment for each type */}
-      {/* TODO: Search box which list all goals that mention the word you type eg "teamwork" */}
+        {/* TODO: Top Equipment for each type */}
+        {/* TODO: Search box which list all goals that mention the word you type eg "teamwork" */}
       </div>
     </main>
   );
