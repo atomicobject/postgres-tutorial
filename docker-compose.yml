@@ -31,20 +31,14 @@ services:
       timeout: 5s
       retries: 5
 
-  pgadmin:
-    image: dpage/pgadmin4:latest
+  pgweb:
+    image: sosedoff/pgweb
     ports:
-      - "5050:80"
+      - "8081:8081"
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@local.dev
-      PGADMIN_DEFAULT_PASSWORD: admin
-      PGADMIN_CONFIG_SERVER_MODE: "False"
-    volumes:
-      - pgadmin_data:/var/lib/pgadmin
-      - ./pgadmin/servers.json:/pgadmin4/servers.json:ro
+      DATABASE_URL: postgres://postgres:postgres@db:5432/app?sslmode=disable
     depends_on:
       - db
 
 volumes:
   postgres_data:
-  pgadmin_data:
