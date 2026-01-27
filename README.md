@@ -2,9 +2,9 @@
 
 ## Prerequisites
 
-- Docker Desktop (running)
-- Node.js 20+
-- npm
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (running)
+- [Node.js 20+](https://nodejs.org/)
+- [Git](https://git-scm.com/downloads)
 
 ## Install
 
