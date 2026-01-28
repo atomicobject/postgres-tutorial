@@ -27,28 +27,31 @@ export function GoalSearch({ searchAction }: GoalSearchProps) {
   }, [debouncedSearch, searchAction]);
 
   return (
-    <div className="mt-8">
-      <h2 className="text-2xl font-bold mb-4">Search Goals</h2>
-      <Input
-        type="text"
-        placeholder="Search for goals (e.g. teamwork)"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="mb-4"
-      />
-      {results.length > 0 && (
-        <ul className="space-y-2">
-          {results.map((result, index) => (
-            <li key={index}>
-              <Card>
-                <CardContent className="py-3">
-                  <p className="font-medium">{result.one_year_goal}</p>
-                </CardContent>
-              </Card>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+    <Card className="h-full flex flex-col">
+      <CardContent className="pt-4 flex flex-col h-full">
+        <Input
+          type="text"
+          placeholder="Search for goals (e.g. teamwork)"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="mb-4"
+        />
+        <div className="flex-1 overflow-y-auto">
+          {results.length > 0 && (
+            <ul className="space-y-2 pr-2">
+              {results.map((result, index) => (
+                <li key={index}>
+                  <Card>
+                    <CardContent className="py-3">
+                      <p className="font-medium">{result.one_year_goal}</p>
+                    </CardContent>
+                  </Card>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </CardContent>
+    </Card>
   );
 }

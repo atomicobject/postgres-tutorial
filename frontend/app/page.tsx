@@ -124,7 +124,10 @@ export default async function Home() {
           ))}
         </div>
 
-        <div className="grid grid-cols-3 gap-6 mt-8">
+        <div className="grid grid-cols-2 gap-6 mt-8">
+          <GoalSearch searchAction={searchGoals} />
+
+          <div className="flex flex-col gap-4">
           <Card>
             <CardHeader>
               <CardTitle>Top Weapon</CardTitle>
@@ -150,8 +153,7 @@ export default async function Home() {
             </CardContent>
           </Card>
         </div>
-
-        <GoalSearch searchAction={searchGoals} />
+        </div>
       </div>
     </main>
   );
