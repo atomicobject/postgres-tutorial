@@ -5,9 +5,12 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
-// Simple query helper for raw SQL
-export async function query<T = unknown>(text: string): Promise<T[]> {
-  const result = await pool.query(text);
+// Simple query helper for raw SQL with optional params
+export async function query<T = unknown>(
+  text: string,
+  params?: unknown[]
+): Promise<T[]> {
+  const result = await pool.query(text, params);
   return result.rows as T[];
 }
 
