@@ -6,6 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+
 async function getBestWorstQuestions() {
   let bestWorstQuestions = [
     {
@@ -38,8 +39,29 @@ async function getBestWorstQuestions() {
   return bestWorstQuestions;
 }
 
+async function getTopEquipment() {
+  let topEquipment = {
+    suits: "<<UNKNOWN>>",
+    vehicles: "<<UNKNOWN>>",
+    weapons: "<<UNKNOWN>>",
+  };
+
+  // topEquipment = (await query<{
+  //   suits: string;
+  //   vehicles: string;
+  //   weapons: string;
+  // }>(`
+  // ---
+  // QUERY GOES HERE
+  // ---
+  // `))[0];
+
+  return topEquipment;
+}
+
 export default async function Home() {
   const categoryStats = await getBestWorstQuestions();
+  const topEquipment = await getTopEquipment();
 
   return (
     <main className="min-h-screen bg-background p-8">
@@ -57,7 +79,7 @@ export default async function Home() {
           {categoryStats.map((stat) => (
             <Card key={stat.category}>
               <CardHeader>
-                <CardTitle>{stat.category}</CardTitle>
+                <CardTitle>{stat.category} Questions</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 gap-6">
@@ -83,7 +105,33 @@ export default async function Home() {
           ))}
         </div>
 
-        {/* TODO: Top Equipment for each type */}
+        <div className="grid grid-cols-3 gap-6 mt-8">
+          <Card>
+            <CardHeader>
+              <CardTitle>Top Weapon</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-lg font-semibold text-primary">{topEquipment.weapons}</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Top Suit</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-lg font-semibold text-primary">{topEquipment.suits}</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Top Vehicle</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-lg font-semibold text-primary">{topEquipment.vehicles}</p>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* TODO: Search box which list all goals that mention the word you type eg "teamwork" */}
       </div>
     </main>
