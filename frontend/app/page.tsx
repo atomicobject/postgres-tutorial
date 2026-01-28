@@ -30,7 +30,9 @@ async function getBestWorstQuestions() {
   //   best_question: string;
   //   worst_question: string;
   // }>(`
-  // // TODO: Replace with Postgres query
+  // ---
+  // QUERY GOES HERE
+  // ---
   // `);
 
   return bestWorstQuestions;

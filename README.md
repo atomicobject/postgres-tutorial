@@ -28,4 +28,4 @@ docker compose up --build
 
 ## Workshop
 
-[Get started with the workshop steps](docs/postgres-workshop-steps.md)
+1. [Get Best and Worst Questions by Category](docs/best-worst-questions.md)
