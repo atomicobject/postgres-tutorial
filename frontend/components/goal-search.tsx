@@ -27,7 +27,7 @@ export function GoalSearch({ searchAction }: GoalSearchProps) {
   }, [debouncedSearch, searchAction]);
 
   return (
-    <Card className="h-full flex flex-col">
+    <Card className="h-full flex flex-col col-span-2">
       <CardContent className="pt-4 flex flex-col h-full">
         <Input
           type="text"
