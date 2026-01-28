@@ -1,4 +1,4 @@
-## Goal: Get Most Frequently Selected tool for each Category
+## Goal: Get Most Frequently Selected Weapon, Suit, and Vehicle
 
 ### Examine our Data
 

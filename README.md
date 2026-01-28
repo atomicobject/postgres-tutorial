@@ -32,5 +32,6 @@ You have been hired by a superhero organization to create reports on their team'
 
 1. [Get Best and Worst Questions by Category](docs/best-worst-questions.md)
 2. [Get the top weapons, vehicles and suits used](docs/top-tools-used.md)
+2. [Search one year goals](docs/search-goals.md)
 
 ![Hero Assessment Form](docs/hero-assessment-form.png)

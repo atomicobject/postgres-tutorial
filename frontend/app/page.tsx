@@ -94,8 +94,6 @@ export default async function Home() {
           Superhero Mission Readiness Assessment Results
         </p>
 
-        {/* TODO: Top Performing super hero */}
-
         <div className="grid gap-6">
           {categoryStats.map((stat) => (
             <Card key={stat.category}>
