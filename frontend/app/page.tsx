@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-
+import { GoalSearch } from "@/components/goal-search";
 
 async function getBestWorstQuestions() {
   let bestWorstQuestions = [
@@ -57,6 +57,27 @@ async function getTopEquipment() {
   // `))[0];
 
   return topEquipment;
+}
+
+async function searchGoals(searchTerm: string) {
+  "use server";
+  let goals: {one_year_goal: string}[] = [{one_year_goal: '<<UNKNOWN>>'}];
+
+  // NOTE:
+  // Use $1 as the parameter placeholder, e.g.:
+  // WHERE some_column ILIKE '%' || $1 || '%'
+
+/*************************/
+
+//   goals = await query<{
+//     one_year_goal: string;
+//   }>(`
+//   ---
+// QUERY GOES HERE
+//   ---
+//   `, [searchTerm]);
+
+  return goals;
 }
 
 export default async function Home() {
@@ -132,7 +153,7 @@ export default async function Home() {
           </Card>
         </div>
 
-        {/* TODO: Search box which list all goals that mention the word you type eg "teamwork" */}
+        <GoalSearch searchAction={searchGoals} />
       </div>
     </main>
   );

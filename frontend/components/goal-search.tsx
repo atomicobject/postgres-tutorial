@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
+import { useDebounce } from "@/hooks/use-debounce";
 
 type Goal = {
   one_year_goal: string;
@@ -15,16 +16,15 @@ type GoalSearchProps = {
 export function GoalSearch({ searchAction }: GoalSearchProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState<Goal[]>([]);
+  const debouncedSearch = useDebounce(searchTerm, 300);
 
-  const handleSearch = async (value: string) => {
-    setSearchTerm(value);
-    if (value.trim() === "") {
+  useEffect(() => {
+    if (debouncedSearch.trim() === "") {
       setResults([]);
       return;
     }
-    const goals = await searchAction(value);
-    setResults(goals);
-  };
+    searchAction(debouncedSearch).then(setResults);
+  }, [debouncedSearch, searchAction]);
 
   return (
     <div className="mt-8">
@@ -33,7 +33,7 @@ export function GoalSearch({ searchAction }: GoalSearchProps) {
         type="text"
         placeholder="Search for goals (e.g. teamwork)"
         value={searchTerm}
-        onChange={(e) => handleSearch(e.target.value)}
+        onChange={(e) => setSearchTerm(e.target.value)}
         className="mb-4"
       />
       {results.length > 0 && (
