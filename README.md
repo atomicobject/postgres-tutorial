@@ -31,7 +31,7 @@ docker compose up --build
 You have been hired by a superhero organization to create reports on their team's performance. Their superheroes have all taken an assessment, and now we have a database with their results. Here are your objectives.
 
 1. [Get Best and Worst Questions by Category](docs/best-worst-questions.md)
-2. [Get the top weapons, vehicles and suits used](docs/top-tools-used.md)
+2. [Get the top Weapon, Vehicle and Suit used](docs/top-tools-used.md)
 2. [Search one year goals](docs/search-goals.md)
 
 ![Hero Assessment Form](docs/hero-assessment-form.png)
