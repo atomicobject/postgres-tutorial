@@ -61,21 +61,21 @@ async function getTopEquipment() {
 
 async function searchGoals(searchTerm: string) {
   "use server";
-  let goals: {one_year_goal: string}[] = [{one_year_goal: '<<UNKNOWN>>'}];
+  let goals: { one_year_goal: string }[] = [{ one_year_goal: '<<UNKNOWN>>' }];
 
   // NOTE:
   // Use $1 as the parameter placeholder, e.g.:
   // WHERE some_column ILIKE '%' || $1 || '%'
 
-/*************************/
+  /*************************/
 
-//   goals = await query<{
-//     one_year_goal: string;
-//   }>(`
-//   ---
-// QUERY GOES HERE
-//   ---
-//   `, [searchTerm]);
+  //   goals = await query<{
+  //     one_year_goal: string;
+  //   }>(`
+  //   ---
+  // QUERY GOES HERE
+  //   ---
+  //   `, [searchTerm]);
 
   return goals;
 }
@@ -128,31 +128,31 @@ export default async function Home() {
           <GoalSearch searchAction={searchGoals} />
 
           <div className="flex flex-col gap-4">
-          <Card>
-            <CardHeader>
-              <CardTitle>Top Weapon</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-lg font-semibold text-primary">{topEquipment.weapons}</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Top Suit</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-lg font-semibold text-primary">{topEquipment.suits}</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Top Vehicle</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-lg font-semibold text-primary">{topEquipment.vehicles}</p>
-            </CardContent>
-          </Card>
-        </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>Top Weapon</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg font-semibold text-primary">{topEquipment.weapons}</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Top Suit</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg font-semibold text-primary">{topEquipment.suits}</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Top Vehicle</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg font-semibold text-primary">{topEquipment.vehicles}</p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </main>
