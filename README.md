@@ -29,3 +29,4 @@ docker compose up --build
 ## Workshop
 
 1. [Get Best and Worst Questions by Category](docs/best-worst-questions.md)
+2. [Get the top weapons, vehicles and suits used](docs/top-tools-used.md)

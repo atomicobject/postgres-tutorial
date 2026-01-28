@@ -32,27 +32,17 @@ Ok let's look at our table first. Each row has assessment results as a jsonb fie
         "Improvising heroically when gadgets broke or went missing": 1,
         "Building, upgrading, or repurposing gadgets under pressure": 1
     },
-    "Equipment Used": {
-        "suits": [
-            "Nano-armor suit",
-            "Stealth suit",
-            "Exo-suit"
-        ],
-        "weapons": [
-            "Stun baton",
-            "Energy shield projector",
-            "Grappling hook launcher"
-        ],
-        "vehicles": [
-            "VTOL dropship"
-        ]
-    },
-    "Team Goals": {
-        "oneYear": "Win the fights that matter, improve our mid-mission pivots, and bottle the magic into a simple hero playbook while sharpening Captain Steel's signature move each mission.",
-        "threeYear": "Build a legendary crew known for smooth coordination, fast takedowns, and minimal collateral damage while keeping a simple 'how we beat them' log."
-    }
+  ...
 }
 ```
+
+Our goal is to get average responses for each question, then choose the question that scores the best and the one that scores the worst for each category:
+
+| category | best | worst |
+|----------|------|-------|
+| Battle Planning | (best question result) | (worst question result) |
+| Gadgets & Combat Tricks | (best question result) | (worst question result) |
+| Hero Team Synergy | (best question result) | (worst question result) |
 
 ### Step 1 - Get all the results from under the 'Battle Planning' category
 
