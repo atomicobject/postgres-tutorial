@@ -34,7 +34,7 @@ You have been hired by a superhero organization to create reports on their team'
 2. [Get the top Weapon, Vehicle and Suit used](docs/top-tools-used.md)
 3. [Search one year goals](docs/search-goals.md)
 4. Extra credit - Find the top performing superhero
-5. Extra credit - Add a bar graph of average Mission Planning, Team Dynamics, Tech and Tactics scores
+5. Extra credit - Add a bar graph of average Battle Planning, Hero Team Synergy, Gadgets & Combat Tricks scores
 6. Extra credit - Add a dropdown to filter by superhero, so this report is individual rather than average results
 7. Extra credit - Add a line under each goal with the name of the superhero who had that goal
 

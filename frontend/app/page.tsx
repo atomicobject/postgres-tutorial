@@ -10,17 +10,17 @@ import { GoalSearch } from "@/components/goal-search";
 async function getBestWorstQuestions() {
   let bestWorstQuestions = [
     {
-      category: "Mission Planning",
+      category: "Battle Planning",
       best_question: "<<UNKNOWN>>",
       worst_question: "<<UNKNOWN>>",
     },
     {
-      category: "Team Dynamics",
+      category: "Hero Team Synergy",
       best_question: "<<UNKNOWN>>",
       worst_question: "<<UNKNOWN>>",
     },
     {
-      category: "Tech and Tactics",
+      category: "Gadgets & Combat Tricks",
       best_question: "<<UNKNOWN>>",
       worst_question: "<<UNKNOWN>>",
     },

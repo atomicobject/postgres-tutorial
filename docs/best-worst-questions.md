@@ -74,13 +74,13 @@ GROUP BY key
 
 ```
 SELECT key AS question, AVG(value::numeric) AS avg_score
-FROM assessments CROSS JOIN LATERAL jsonb_each_text(assessment_result->'Tech And Tactics')
+FROM assessments CROSS JOIN LATERAL jsonb_each_text(assessment_result->'Gadgets & Combat Tricks')
 GROUP BY key
 ```
 
 ```
 SELECT key AS question, AVG(value::numeric) AS avg_score
-FROM assessments CROSS JOIN LATERAL jsonb_each_text(assessment_result->'Team Dynamics')
+FROM assessments CROSS JOIN LATERAL jsonb_each_text(assessment_result->'Hero Team Synergy')
 GROUP BY key
 ```
 
@@ -96,11 +96,11 @@ FROM assessments CROSS JOIN LATERAL jsonb_each_text(assessment_result->'Battle P
 GROUP BY key
 UNION ALL
 SELECT key AS question, AVG(value::numeric) AS avg_score
-FROM assessments CROSS JOIN LATERAL jsonb_each_text(assessment_result->'Tech And Tactics')
+FROM assessments CROSS JOIN LATERAL jsonb_each_text(assessment_result->'Gadgets & Combat Tricks')
 GROUP BY key
 UNION ALL
 SELECT key AS question, AVG(value::numeric) AS avg_score
-FROM assessments CROSS JOIN LATERAL jsonb_each_text(assessment_result->'Team Dynamics')
+FROM assessments CROSS JOIN LATERAL jsonb_each_text(assessment_result->'Hero Team Synergy')
 GROUP BY key
 ```
 
@@ -123,12 +123,12 @@ SELECT 'Battle Planning' as category, key AS question, AVG(value::numeric) AS av
 FROM assessments CROSS JOIN LATERAL jsonb_each_text(assessment_result->'Battle Planning')
 GROUP BY key
 UNION ALL
-SELECT 'Tech And Tactics' as category, key AS question, AVG(value::numeric) AS avg_score
-FROM assessments CROSS JOIN LATERAL jsonb_each_text(assessment_result->'Tech And Tactics')
+SELECT 'Gadgets & Combat Tricks' as category, key AS question, AVG(value::numeric) AS avg_score
+FROM assessments CROSS JOIN LATERAL jsonb_each_text(assessment_result->'Gadgets & Combat Tricks')
 GROUP BY key
 UNION ALL
-SELECT 'Team Dynamics' as category, key AS question, AVG(value::numeric) AS avg_score
-FROM assessments CROSS JOIN LATERAL jsonb_each_text(assessment_result->'Team Dynamics')
+SELECT 'Hero Team Synergy' as category, key AS question, AVG(value::numeric) AS avg_score
+FROM assessments CROSS JOIN LATERAL jsonb_each_text(assessment_result->'Hero Team Synergy')
 GROUP BY key
 ```
 
