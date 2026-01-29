@@ -136,8 +136,6 @@ WITH all_tools AS (
 
 Use `ROW_NUMBER` and `PARTITION` to apply numeric values to each row
 
-Select only results where row number is 1, to get top tool.
-
 ```
 WITH all_tools AS (
   SELECT
@@ -175,6 +173,8 @@ GROUP BY category, tool
 ```
 
 ### Step 6 - Choose top tool from each category
+
+Select only results where row number is 1, to get top tool.
 
 ```
 WITH all_tools AS (
